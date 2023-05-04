@@ -246,11 +246,15 @@ h3 {
   width: 100vw;
   -webkit-transition: margin 0.5s ease-out;
   transition: margin 0.5s ease-out;
-  background: -webkit-gradient(linear, left top, right top, from(#29323c), to(#485563));
-  background: linear-gradient(90deg, #29323c 0%, #485563 100%);
   /* Кнопка начать */
   /* Список времени */
   /* Кнопки со временем */
+}
+@media (max-width: 575.98px) {
+  .screen .screen {
+    background-color: red;
+    font-size: 100px;
+  }
 }
 .screen__check-level {
   margin: 0px 0px 40px 0px;
