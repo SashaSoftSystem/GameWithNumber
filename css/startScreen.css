@@ -1,0 +1,57 @@
+@charset "UTF-8";
+.screen {
+  /* Кнопка начать */
+  /* Список времени */
+  /* Кнопки со временем */
+}
+.screen__start {
+  background-color: transparent;
+  border: 2px solid #c0c0c0;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  -webkit-transition: all ease 500ms;
+  transition: all ease 500ms;
+}
+.screen__start:hover {
+  border: 2px solid #16d9e3;
+  color: #16d9e3;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+.screen__time-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+.screen__time-list li {
+  margin: 10px;
+}
+.screen__time-btn {
+  background-color: transparent;
+  border: 2px solid #c0c0c0;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  -webkit-transition: all ease 500ms;
+  transition: all ease 500ms;
+}
+.screen__time-btn:hover {
+  border: 2px solid #16d9e3;
+  color: #16d9e3;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}

@@ -1,0 +1,73 @@
+// Переменные 
+$radius: 10px;
+$shadow:  1px 1px 5px #475462;
+$backgroundCard: #ea9999;
+$fzh1: 3rem;
+$fzh2: 2rem;
+$fzh3: 1.2rem;
+$fz-btn: 1.3rem;
+$fz-form: 1.25em;
+$border: 2px solid #c0c0c0;
+
+$easy_backgroundColor: #cdf0df;
+$medium_backgroundColor: #f3f5cb;
+$hard_backgroundColor: #ea9999;
+
+//Миксин стиля всех кнопок
+@mixin styleBtn {
+}
+    
+
+@mixin styleCard {
+    background: $backgroundCard;
+    border-radius: $radius;
+    box-shadow: $shadow;
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all ease 500ms;
+
+    &:hover {
+        border: 2px solid #16d9e3;
+        background: linear-gradient(180deg, #f35260,#ea604c);
+    
+    }
+}
+
+@mixin styleForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: transparent;
+    border: $border;
+    border-radius: $radius;
+    color: #fff;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 0.2rem 0.6rem;
+    box-shadow: $shadow;
+    font-size: $fz-form;
+    transition: all ease 500ms;
+
+
+    &:focus {
+        border: 2px solid #16d9e3;
+        transform: scale(1.05);
+    }
+
+    &:invalid:focus {
+        border: 2px solid red;
+        box-shadow: $shadow;
+    }
+    &:valid:focus {
+        border: 2px solid green;
+        box-shadow: $shadow;
+    }
+}
+
+@function tone($color, $tone: 1, $dir: up) {
+    $adjust: if($dir == up, 16, -16) * $tone;
+    @return adjust-color($color, $red: $adjust, $green: $adjust, $blue: $adjust);
+  }

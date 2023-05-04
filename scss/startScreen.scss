@@ -1,0 +1,237 @@
+@import "variables.scss";
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    transition: margin 0.5s ease-out;
+    background: linear-gradient(90deg, #29323c 0%, #485563 100%);
+
+    &__check-level {
+        margin: 0px 0px 40px 0px;
+        text-align: initial;
+    }
+
+    /* Кнопка начать */
+    &__start {
+        font-size: $fz-btn;
+    }
+
+
+    /* Список времени */
+    &__time-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+
+        li {
+            margin: 10px;
+        }
+    }
+
+    /* Кнопки со временем */
+    &__time-btn {
+        width: 120px;
+        font-size: 1.3rem;
+    }
+
+}
+
+/* Окно с выбором игроков */
+
+.modal {
+    width: 190px;
+    border: 2px solid #16d9e3;
+    border-radius: $radius;
+    padding: 10px;
+    position: fixed;
+    top: 70px;
+    right: 10px;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &__title{
+        font-size: 1.2em;
+        font-weight: bold;
+        text-align: center;
+    }
+ &__list {
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+ }
+
+ &__player {
+    padding: 7px 5px 5px 5px;
+    width: 70px;
+    font-size: 0.9rem;
+
+ }
+
+ &__newPlayer {
+    padding: 7px 5px 5px 5px;
+    font-size: 0.9rem;
+ }
+}
+
+.active-player {
+ 
+    border: 2px solid  #16d9e3;
+} 
+
+.overlay{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+   top: 0;
+   left: 0;
+   background-color: rgba(0, 0, 0, 0.4);
+   z-index: 10;
+}
+
+
+
+.form {
+    width: 200px;
+    margin: 20px 0px 30px 0px;
+    font-size: 20px;
+    @include styleForm;
+
+}
+
+
+
+.level {
+    width: 775px;
+    display: flex;
+    gap: 20px;
+    width: 50%;
+    margin: 0px 0px 40px 0px;
+
+    &__card {}
+
+    &__btn {
+        color: rgb(0, 0, 0);
+        background-color: white;
+        font-size: 1rem;
+        font-weight: bold;
+        border: 2px solid white;
+
+        &:hover {
+            border: 2px solid white;
+        }
+    }
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    flex: 1 1 calc(100%/3);
+    max-height: 300px;
+    gap: 5px;
+    padding: 20px 10px 20px 10px;
+    color: black;
+    border-radius: $radius;
+    transition: all 300ms linear;
+
+    &__title {
+        text-align: center;
+        div {          
+            font-size: 1.1rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: rgb(58, 58, 58);
+
+        }
+    
+
+        h3 {
+            padding: 0px 0px 5px 0px;
+            font-size: 1.7rem;
+            font-weight: bold;
+        }
+    }
+
+    &__main {
+
+        width: 100%;
+        height: 100%;
+        padding: 5px 0px;
+        display: flex;
+        text-align: center;
+
+    }
+
+    &__btn {
+        color: black;
+        font-weight: bold;
+        font-size: 1rem;
+        border: 2px solid white;
+        background-color: whitesmoke;
+
+        &:hover {
+            border: 2px solid rgb(209, 209, 209);
+        }
+    }
+
+
+}
+
+.img__container {
+    width: 60%;
+    display: flex;
+
+    margin: auto auto;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+
+
+
+    img {
+        padding: 0px 0px 5px 0px;
+        width: 50px;
+    }
+}
+
+.easy {
+    background-color: $easy_backgroundColor;
+
+    &.active-card {
+        background-color: darken($easy_backgroundColor, 10%);
+    }
+}
+
+.medium {
+    background-color: $medium_backgroundColor;
+
+    &.active-card {
+              background-color: darken($medium_backgroundColor, 15%);
+    }
+}
+
+.hard {
+    background-color: $hard_backgroundColor;
+
+    &.active-card {
+        background-color: darken($hard_backgroundColor, 3%);
+    }
+
+}
+
+.active-card {
+    transform: scale(1.09);
+    box-shadow: 0 0 0px 2px rgb(255, 255, 255);
+}

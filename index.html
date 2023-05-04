@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Игра с числами</title>
+</head>
+
+<body>
+
+  <!-- Шапка с кнопками» -->
+  <header class="header">
+    <div class="currentRecord btn hide" id="pos"></div>
+    <div class="btn restart hide" id="restart"><a href="#firstScreen">Начать заново</a></div>
+    <div class="btn static hide" id="btn-static"><a href="#screen-static">Статистика</a></div>
+    <div class="btn hide" id="levelInfo"><a href="#">Текущий уровень</a></div>   
+    <div  class="btn avatar hide">
+    <div id="avatar"></div>
+    <div class="user__avatar" id="btn_AvatarPlus"><img src="img/Плюс.png" alt="Аватарка"></div>  
+    </div> 
+     
+  </header>
+
+  <div class="modal hide">
+    <div class="modal__title">Список игроков:</div>
+    <div class="modal__list">
+     <!-- <div class="modal__player btn">Игрок №1</div> -->
+    </div>
+    <div class="modal__newPlayer btn">Новый игрок</div>
+  </div>
+
+  <div class="overlay hide"></div>
+
+  <!-- Стартовый экран -->
+  <div class="screen" id="firstScreen">
+    <h1>Игра с числами</h1>
+    <form action="#" method="post" class="for-m" name="form">
+      <div class="userName">
+        <input type="text" class="form" name="userName" required placeholder="Напиши своё имя" value="">
+      </div>
+    </form>
+   
+      <div class="screen__start btn hide" id="start"><a href="#sreenTime">Начать игру</a></div>
+      
+  
+  </div>
+
+  <!-- Экран выбора времени -->
+  <div class="screen" id="sreenTime">
+    <div class="screen__check-level">
+      <h1 id="check-level">Выберите уровень и время</h1>
+    </div>
+
+    <div class="screen__level level" id="level">
+
+      <div class="level__card card easy " data-level="Лёгкий" id="easy">
+        <div class="card__title">
+          <h3>Лёгкий</h3>
+          <div>от 0 до 20</div>
+        </div>
+        <div class="card__main">
+      
+              <div class="img__container">
+                <img src="img/Плюс.png" alt="">
+                <img src="img/Минус.png" alt="">
+              </div>
+        
+        </div>
+        <div class="card__btn btn" id="select"><a href="#">Выбрать</a></div>
+      </div>
+
+      <div class="level__card medium card active-card" data-level="Средний" id="medium">
+        <div class="card__title">
+          <h3>Средний</h3>
+          <div>от 0 до 20</div>
+        </div>
+        <div class="card__main">
+      
+              <div class="img__container">
+              <img src="img/Умножить.png" alt="">
+              <img src="img/Разделить.png" alt="">
+            </div>
+        
+        </div>
+        <div class=" btn card__btn" id="select"><a href="#">Выбрать</a></div>
+      </div>
+
+      <div class="level__card hard card" data-level="Сложный" id="hard">
+        <div class="card__title">
+          <h3>Сложный</h3>
+          <div>от 0 до 100</div>
+        </div>
+        <div class="card__main">       
+              <div class="img__container">
+              <img src="img/Плюс.png" alt="">
+              <img src="img/Минус.png" alt="">
+              <img src="img/Умножить.png" alt="">
+              <img src="img/Разделить.png" alt="">
+            </div>
+        
+        </div>
+        <div class="card__btn btn" id="select"><a href="#">Выбрать</a></div>
+      </div>
+
+    </div>
+
+
+
+    <div>
+      <ul class="screen__time-list" id="timeList">
+        <li>
+          <div class="screen__time-btn btn" data-time="5"><a class="timer-IF" href="#screenGame">5 сек</a></div>
+        </li>
+        <li>
+          <div class="screen__time-btn btn" data-time="15"><a href="#screenGame">15 сек</a></div>
+        </li>
+        <li>
+          <div class="screen__time-btn btn" data-time="30"><a href="#screenGame">30 сек</a></div>
+        </li>
+        <li>
+          <div class="screen__time-btn btn" data-time="60"><a href="#screenGame">60 сек</a></div>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Экран с игрой -->
+  <div class="screen" id="screenGame">
+    <div class="timer container" id = timer-task>
+      <div class="timer__progress">
+        <span class="timer__value">0</span>
+      </div>   
+      <div class="timer__task">
+        <h3>Задача: <span id="task">task</span></h3>
+      </div>    
+    </div>
+   
+    <div class="screen__board container" id="board"></div>
+  </div>
+
+  <!-- Экран с ошибками -->
+  <div class="screen" id="screen-false">
+    <h3 class="screen__task"> <span id="task">Неправильные ответы:</span></h3>
+    <div class="screen__board" id="boardFinish">
+    </div>
+  </div>
+
+  <!-- Экран со статистикой -->
+  <div class="screen" id="screen-static">
+    <h3 id="statistics-mainTitle"> <span>Статистика:</span></h3>
+
+    <div class="screen__board statistics" id="boardStatistics">
+
+      <div class="statistics__card">
+
+        <div class="statistics__easy statistics-block  easy">
+          <div class="statistics__title">
+            <h3 id="easy-title">Лёгкий</h3>
+            <div class="easy-best best"> Рекорд: 0</div>
+          </div>
+          <div class="table" id="table-easy">
+            <div class="table__head"> 
+              <div class="head-one">№</div>
+              <div class="head-two">Дата</div>
+              <div class="head-three">Счёт</div>
+            </div>       
+          </div>
+        </div>
+
+        <div class="statistics__medium statistics-block  medium">
+          <div class="statistics__title">
+            <h3 id="medium-title">Средний</h3>
+            <div class="medium-best best"> Рекорд: 0</div>
+          </div>
+          <div class="table" id="table-medium">
+            <div class="table__head"> 
+              <div class="head-one">№</div>
+              <div class="head-two">Дата</div>
+              <div class="head-three">Счёт</div>
+            </div>        
+          </div>
+        </div>
+
+        <div class="statistics__hard statistics-block  hard">
+          <div class="statistics__title">
+            <h3 id="hard-title">Сложный</h3>
+            <div class="hard-best best"> Рекорд: 0</div>
+          </div>
+          <div class="table" id="table-hard">
+            <div class="table__head"> 
+              <div class="head-one">№</div>
+              <div class="head-two">Дата</div>
+              <div class="head-three">Счёт</div>
+            </div>         
+          </div>
+        </div>
+
+      </div>
+
+      <div class="statistics__btn">
+        <div class="btn clear"><a href="#firstScreen">Очистить</a></div>
+        <div class="btn back" id="btnBack"><img src="img/back.png" alt="Кнопка назад"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Подключение скрипта -->
+  <script src="app.js"></script>
+</body>
+
+</html>

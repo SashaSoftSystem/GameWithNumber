@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css?family=Khula&display=swap");
+@import "reset.scss";
+@import "variables.scss";
+
+
+body {
+    color: #fff;
+    font-family: "Khula", sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+
+}
+
+h1 {
+    line-height: 1.4;
+    font-size: $fzh1;
+}
+
+h2 {
+    line-height: 1.4;
+    font-size: $fzh2;
+}
+
+h3 {
+    font-size: $fzh2;
+}
+
+.header {
+    display: flex;
+    justify-content: right;
+    gap: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 25px 0px 50px 0px;
+    padding: 0px 50px 0px 0px; 
+    font-size: 1rem; 
+    z-index: 20;    
+}
+
+.restart{
+    background-color: red;   
+}
+
+.screen {
+    /* Доска c игрой */
+    &__board {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        flex-direction: column;
+        width: 470px;
+        height: 470px;
+        background: linear-gradient(118.38deg, #29323c -4.6%, #485563 200.44%);
+        box-shadow: -8px -8px 20px #2a333d, 10px 7px 20px #475462;
+        border-radius: $radius;
+        overflow: hidden;
+    }
+
+    /* Кнопка «Посмотреть ошибки» */
+    &__btn-false {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        bottom: 40px;
+        left: center;
+        @include styleBtn();
+    }
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border-radius: $radius;
+    border: $border;
+    color: #fff;
+    cursor: pointer;
+    padding: 5px 7px;
+    backface-visibility: hidden;
+    transition: all 100ms linear;
+    will-change: transform;
+   
+    
+
+    a {
+        padding: 4px 0px 0px 0px;
+    }
+
+    &:hover {
+        
+        transform: scale(1.05) translate3d(0px,0,50px);
+        border: 2px solid #16d9e3;  
+        box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+    }
+
+    &:active {
+        transform: scale(1);
+        }
+}
+
+.avatar {
+    position: relative;
+    height: 30px;
+    padding-top: 7px;
+}
+.user__avatar{
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+  
+    width: 17px;
+    height: 17px;
+   border: 0.5px solid white;
+  background-color: #fff;
+ border-radius: 50%; 
+    // background-color: white; 
+    margin: 3px 0px 0px 0px;
+ 
+
+  
+   
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%; 
+
+    
+ 
+     
+    }
+
+    &:hover {          
+        transform: scale(1.2) translate3d(0px,0,50px);
+        border: 2px solid #16d9e3;  
+        box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+    }
+    }
+
+   
+
+@import "startScreen.scss";
+@import "gameScreen.scss";
+@import "finishGame.scss";
+
+/* Спрятать страницу */
+.hide {
+    display: none;
+}

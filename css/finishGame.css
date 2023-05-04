@@ -1,0 +1,122 @@
+@charset "UTF-8";
+/* Доска, на которой плашке с неправильными ответами */
+#boardFinish {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -ms-flex-line-pack: start;
+      align-content: start;
+  /* Плашка с неправильными ответами */
+}
+#boardFinish .screen__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  position: relative;
+  font-size: 25px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  -webkit-transition: all 2s ease 0s;
+  transition: all 2s ease 0s;
+  background: #9B2D30;
+  border-radius: 10px;
+  -webkit-box-shadow: 1px 1px 5px #475462;
+          box-shadow: 1px 1px 5px #475462;
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-transition: all ease 500ms;
+  transition: all ease 500ms;
+}
+#boardFinish .screen__container:hover {
+  border: 2px solid #16d9e3;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f35260), to(#ea604c));
+  background: linear-gradient(180deg, #f35260, #ea604c);
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+#boardFinish .screen__wrongAnwserTop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 10;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  text-align: center;
+  color: transparent;
+  font-size: 40px;
+}
+#boardFinish .screen__wrongAnwserTop:hover {
+  color: white;
+}
+#boardFinish .screen__wrongAnwserBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 21px;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  color: white;
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+}
+#boardFinish .cover {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(118.38deg, #29323c -4.6%, #485563 200.44%);
+}

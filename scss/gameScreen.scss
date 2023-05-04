@@ -1,0 +1,94 @@
+@import "variables.scss";
+
+.screen {
+
+
+}
+
+.currentRecord{
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    padding: 7px 7px 5px 7px;
+}
+
+.timer {
+    position: relative;
+    width: 470px;
+    display: flex;
+    margin: 0px 0px 30px 0px;
+    align-items: center;
+    justify-content: center;
+
+    &__progress {
+        position: absolute;
+        bottom: center;
+        left: 5px;
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        background-color: red;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &::before {
+            content: "";
+            position: absolute;
+            height: 70%;
+            width: 70%;
+            border-radius: 50%;
+            background-color: #485563;
+        
+        }
+    }
+
+    &__value {
+        position: relative;
+        font-size: 30px;
+        font-weight: bold;
+        color: white;
+        padding: 5px 0px 0px 0px;
+    }
+
+    &__counter {
+        span {
+            font-size: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+           
+        }
+    }
+
+     /* Текст задания */
+     &__task {      
+        font-size: 50px;
+    }
+}
+
+/* Родитель кругов */
+.circleParent {}
+
+/* Стили круга */
+.circle {
+    background: linear-gradient(90deg, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
+    position: absolute;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all ease 300ms;
+    box-shadow: $shadow;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+
+
+    &:hover {
+        transform: scale(0.9);
+    }
+
+}
