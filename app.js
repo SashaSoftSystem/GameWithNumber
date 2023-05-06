@@ -146,7 +146,7 @@ window.addEventListener("load", function () {
     });
     btnBack.classList.remove("hide");
   }
-  console.log(keyDataEasy, userName);
+
 });
 
 // Защита от случайного обновления
