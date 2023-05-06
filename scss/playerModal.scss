@@ -1,0 +1,103 @@
+@import "variables.scss";
+/* Окно с выбором игроков */
+.modal {
+    max-width: 190px;
+    border: 2px solid #16d9e3;
+    border-radius: $radius;
+    padding: 10px;
+    position: fixed;
+    top: 70px;
+    right: 10px;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #16d9e3;
+    
+    @media (max-width:1200px) {
+        max-width: 970px;
+    }
+
+    @media (max-width:992px) {
+        max-width: 750px;
+    }
+
+    @media (max-width:767px) {
+        position: relative;
+        width: 90vw;
+        height: 90vh;
+        top: 0px;
+        right: 0px;
+        margin: 50px auto;
+    }
+
+
+    &__title {
+        font-size: 1.2em;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    &__list {
+        padding: 5px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width:1200px) {
+            
+        }
+    
+        @media (max-width:992px) {
+          
+        }
+    
+        @media (max-width:767px) {
+         flex-direction: column;
+          
+        }
+    }
+
+    &__player {
+        padding: 7px 5px 5px 5px;
+        width: 700px;
+        font-size: 0.9rem;
+
+    }
+
+    &__newPlayer {
+        padding: 7px 5px 5px 5px;
+        font-size: 0.9rem;
+
+        @media (max-width:1200px) {
+            
+        }
+    
+        @media (max-width:992px) {
+          
+        }
+    
+        @media (max-width:767px) {
+         width: 500px;
+         margin: 0 auto;
+          
+        }
+    }
+}
+
+.active-player {
+
+    border: 2px solid #16d9e3;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
