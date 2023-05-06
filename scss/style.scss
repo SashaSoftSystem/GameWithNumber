@@ -35,7 +35,7 @@ body {
         max-width: 750px;
     }
     @media (max-width:767px) {
-        max-width: 300px;
+        max-width: none;
     }
 
 }
@@ -82,6 +82,7 @@ h3 {
     gap: 10px;
     padding: 0px 50px 0px 0px; 
     margin: 0 auto; 
+    background-color: #16d9e3;
 }
 
 .restart{
@@ -129,6 +130,7 @@ h3 {
     backface-visibility: hidden;
     transition: all 100ms linear;
     will-change: transform;
+   max-width: 100px;
    
     
 
