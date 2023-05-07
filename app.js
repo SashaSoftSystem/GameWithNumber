@@ -360,6 +360,7 @@ levelPage.addEventListener("scroll", event => {
 let pos;
 let levelWidth;
 let scroll = levelPage.scrollLeft;
+let scrollWidth = levelPage.scrollWidth;
 for ( let i = 0; i < levelList.length; i++) {
   let x = levelList[i].getBoundingClientRect().left;
   let y = levelList[i].getBoundingClientRect().right;
@@ -376,7 +377,7 @@ for ( let i = 0; i < levelList.length; i++) {
   btnLvelInfo.innerHTML = `Уровень: «${levelSelected}»`;
   levelWidth =levelActive.getBoundingClientRect().width;
   if (x <width/2 && x >width/2-5) {
-    levelPage.scrollLeft = scroll+x-50;
+    levelPage.scrollLeft = scroll+scrollWidth/3-x;
   }
   
  }
