@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Khula&display=swap");
 @import "reset.scss";
 @import "variables.scss";
+@import "media.scss";
 
 
 html {
@@ -85,6 +86,11 @@ h3 {
         box-shadow: -8px -8px 20px #2a333d, 10px 7px 20px #475462;
         border-radius: $radius;
         overflow: hidden;
+
+        @include media("max", "sm") {
+            width: 90vw;
+            height: 90vw;    
+        }
     }
 
     /* Кнопка «Посмотреть ошибки» */

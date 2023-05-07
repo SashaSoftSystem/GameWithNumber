@@ -18,6 +18,7 @@ const levelChooseText = document.querySelector("#check-level"); // Надпис�
 const levelList = document.querySelectorAll(".card"); // Список всех уровней
 let levelActive = document.querySelector(".card.active") || levelList[1]; // Активный уровень
 let btnLevel = document.querySelectorAll(".card__btn"); // Кнопка выбора уровня
+let levelPage = document.querySelector(".level");
 let btnActiveLevel = btnLevel[1]; // Кнопка активного уровня
 btnActiveLevel.innerHTML = "Выбрано";
 const btnLvelInfo = document.querySelector("#levelInfo"); // Кнопка с информацией о выбранном уровне
@@ -83,7 +84,6 @@ let keyRecordHard = `${userName}Сложный + list`; // Ключ для хр�
 let keyDataHard = `${userName}Сложный + data`; // Ключ для хранения массива с датой
 
 /* ******************************************************************************************************************* */
-
 
 
 /* ****************************************** Вспомогательные методы ************************************************* */
@@ -330,8 +330,18 @@ btnStart.addEventListener("click", (event) => {
   
 });
 
+let w;
+let x;
+
 // Метод выбор уровня
 for (let i = 0; i < levelList.length; i++) {
+  // w = levelList[i].getBoundingClientRect().width;
+  // console.log(`Ширина элемента ${w}`);
+  console.log(levelList[i].style.overflow);
+  if(levelList[i].style.overflow === "visible") {
+    alert("Видно");
+  }
+
   levelList[i].addEventListener("click", function () {
     btnActiveLevel.innerHTML = "Выбрать";
     btnLevel[i].innerHTML = "Выбрано";
@@ -342,7 +352,30 @@ for (let i = 0; i < levelList.length; i++) {
     levelSelected = levelList[i].getAttribute("data-level");
     btnLvelInfo.innerHTML = `Уровень: «${levelSelected}»`;
   });
+};
+
+
+levelPage.addEventListener("scroll", event => {
+ x = levelPage.scrollLeft;
+// Метод выбор уровня
+
+for (let i = 0; i < levelList.length; i++) {
+ if (levelList[i].getBoundingClientRect().left <= 30) {
+  window.navigator.vibrate(1000);
+
+  btnActiveLevel.innerHTML = "Выбрать";
+  btnLevel[i].innerHTML = "Выбрано";
+  btnActiveLevel = btnLevel[i];
+  levelActive.classList.remove("active-card");
+  levelList[i].classList.add("active-card");
+  levelActive = levelList[i];
+  levelSelected = levelList[i].getAttribute("data-level");
+  btnLvelInfo.innerHTML = `Уровень: «${levelSelected}»`;
+ }
 }
+
+  return x;
+});
 
 // Метод выбора времени. В методе ниже применяется делигирование событий
 timeList.addEventListener("click", (event) => {

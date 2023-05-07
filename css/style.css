@@ -182,6 +182,12 @@ h3 {
   border-radius: 10px;
   overflow: hidden;
 }
+@media only screen and (max-width: 576px) {
+  .screen__board {
+    width: 90vw;
+    height: 90vw;
+  }
+}
 .screen__btn-false {
   position: absolute;
   display: -webkit-box;
@@ -527,21 +533,21 @@ h3 {
   display: -ms-flexbox;
   display: flex;
   gap: 30px;
-  margin: 0px 10px 40px 10px;
+  margin: 0px 0px 40px 0px;
   overflow: auto;
   padding: 30px;
 }
 @media only screen and (max-width: 768px) {
   .level {
-    width: 90vw;
+    width: 100vw;
     max-height: 300px;
   }
 }
 @media only screen and (max-width: 576px) {
   .level {
-    min-width: 90vw;
+    min-width: 100vw;
     max-height: 200px;
-    padding: 15px;
+    padding: 30px;
   }
 }
 .level__btn {
@@ -583,8 +589,8 @@ h3 {
 @media only screen and (max-width: 576px) {
   .card {
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 50vw;
-            flex: 0 0 50vw;
+        -ms-flex: 0 0 85vw;
+            flex: 0 0 85vw;
     padding: 10px;
   }
 }
