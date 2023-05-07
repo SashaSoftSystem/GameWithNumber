@@ -537,6 +537,19 @@ h3 {
   overflow: auto;
   padding: 30px;
 }
+.level::-webkit-scrollbar {
+  width: 0.5px;
+}
+.level::-webkit-scrollbar-track {
+  -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+  background-color: #f9f9fd;
+  border-radius: 10px;
+}
+.level::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#00c6fb), to(#005bea));
+  background: linear-gradient(180deg, #00c6fb, #005bea);
+}
 @media only screen and (max-width: 768px) {
   .level {
     width: 100vw;
