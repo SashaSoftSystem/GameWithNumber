@@ -361,7 +361,7 @@ levelPage.addEventListener("scroll", event => {
 
 for (let i = 0; i < levelList.length; i++) {
  if (levelList[i].getBoundingClientRect().left <= 30) {
-  window.navigator.vibrate(1000);
+  navigator.vibrate(2000);
 
   btnActiveLevel.innerHTML = "Выбрать";
   btnLevel[i].innerHTML = "Выбрано";
