@@ -356,13 +356,16 @@ for (let i = 0; i < levelList.length; i++) {
 
 
 levelPage.addEventListener("scroll", event => {
- x = levelPage.scrollLeft;
 // Метод выбор уровня
-
-for (let i = 0; i < levelList.length; i++) {
- if (levelList[i].getBoundingClientRect().left <= 30) {
-  navigator.vibrate(2000);
-
+let pos;
+let levelWidth;
+let scroll = levelPage.scrollLeft;
+for ( let i = 0; i < levelList.length; i++) {
+  let x = levelList[i].getBoundingClientRect().left;
+  let y = levelList[i].getBoundingClientRect().right;
+  let width = levelPage.getBoundingClientRect().width;
+ if ((x < width/2 && x >0) || (y > width/2 && y< width)) {
+    navigator.vibrate(2000);
   btnActiveLevel.innerHTML = "Выбрать";
   btnLevel[i].innerHTML = "Выбрано";
   btnActiveLevel = btnLevel[i];
@@ -371,10 +374,16 @@ for (let i = 0; i < levelList.length; i++) {
   levelActive = levelList[i];
   levelSelected = levelList[i].getAttribute("data-level");
   btnLvelInfo.innerHTML = `Уровень: «${levelSelected}»`;
+  levelWidth =levelActive.getBoundingClientRect().width;
+  if (x <width/2 && x >width/2-5) {
+    levelPage.scrollLeft = scroll+x-50;
+  }
+  
  }
 }
 
-  return x;
+
+
 });
 
 // Метод выбора времени. В методе ниже применяется делигирование событий
