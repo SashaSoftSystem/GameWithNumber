@@ -602,10 +602,10 @@ h3 {
 }
 @media only screen and (max-width: 576px) {
   .card {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 85vw;
-            flex: 0 0 85vw;
-    padding: 10px;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    width: 99%;
   }
 }
 .card__title {
@@ -641,6 +641,18 @@ h3 {
 .card__btn:hover {
   border: 2px solid rgb(209, 209, 209);
 }
+@media only screen and (max-width: 576px) {
+  .card__btn {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  #check-level {
+    margin: 0px 0px 10px 0px;
+    padding: 0px;
+  }
+}
 
 .img__container {
   width: 70%;
@@ -664,6 +676,12 @@ h3 {
         flex-wrap: nowrap;
     width: 90%;
     gap: 10px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 .img__container img {
@@ -681,7 +699,7 @@ h3 {
   .img__container img {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
-    width: 30px;
+    width: 50px;
     gap: 0px;
   }
 }

@@ -77,8 +77,8 @@
 }
 
 
-// Настройка уровней игры
 
+// Настройка уровней игры
 .level {
     min-width: 780px;
     display: flex;
@@ -126,6 +126,7 @@
         &:hover {
             border: 2px solid white;
         }
+
     }
 }
 
@@ -144,8 +145,8 @@
     transition: all 300ms linear;
     
    @include media("max", "sm"){
-    flex: 0 0 85vw;
-    padding: 10px;
+    flex: 1 1 auto;
+    width: 99%;
    }
     
 
@@ -187,9 +188,19 @@
         &:hover {
             border: 2px solid rgb(209, 209, 209);
         }
+
+        @include media("max", "sm") {
+            display: none;
+        }
     }
 
 
+}
+#check-level{
+    @include media ("max", "sm") {
+        margin: 0px 0px 10px 0px;
+        padding: 0px;
+    }
 }
 
 .img__container {
@@ -205,6 +216,8 @@
         flex-wrap: nowrap;
         width: 90%;
         gap: 10px;
+        justify-content: center;
+        align-items: center;
        }
 
     img {
@@ -217,7 +230,8 @@
            }
            @include media("max", "sm"){
             flex-wrap: nowrap;
-            width: 30px;
+            width: 50px;
+           
             gap: 0px;
            }
     }

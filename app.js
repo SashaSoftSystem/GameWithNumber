@@ -355,43 +355,6 @@ for (let i = 0; i < levelList.length; i++) {
 };
 
 
-levelPage.addEventListener("scroll", event => {
-// Метод выбор уровня
-let pos;
-let levelWidth;
-let scroll = levelPage.scrollLeft;
-let scrollWidth = levelPage.scrollWidth;
-for ( let i = 0; i < levelList.length; i++) {
-  let x = levelList[i].getBoundingClientRect().left;
-  let y = levelList[i].getBoundingClientRect().right;
-  let width = levelPage.getBoundingClientRect().width;
- if ((x < width/2 && x >0) || (y > width/2 && y< width)) {
-    navigator.vibrate(2000);
-  btnActiveLevel.innerHTML = "Выбрать";
-  btnLevel[i].innerHTML = "Выбрано";
-  btnActiveLevel = btnLevel[i];
-  levelActive.classList.remove("active-card");
-  levelList[i].classList.add("active-card");
-  levelActive = levelList[i];
-  levelSelected = levelList[i].getAttribute("data-level");
-  btnLvelInfo.innerHTML = `Уровень: «${levelSelected}»`;
-  levelWidth =levelActive.getBoundingClientRect().width;
-  if (x <width/2 && x >width/2-5) {
-    levelPage.scrollLeft = scroll+scrollWidth/3-x;
-  }
-  
- }
-}
-
-
-
-// получим DOM-элемент слайдера
-const sliderElem = document.querySelector('.slider');
-// получим экземпляр класса ItcSlider и сохраним его в переменную slider
-const slider =ItcS
-
-
-});
 
 // Метод выбора времени. В методе ниже применяется делигирование событий
 timeList.addEventListener("click", (event) => {
@@ -1186,7 +1149,9 @@ class ItcSlider {
       if (item) {
         this.#state.elListItem[index].classList.add(activeClass);
         levelSelected = levelList[index].getAttribute("data-level");
-        btnLvelInfo.innerHTML = `Уровень: «${levelSelected}»`;
+       levelActive.classList.remove("active-card");
+                btnLvelInfo.innerHTML = `Уровень: «${levelSelected}»`;
+    
         
       } else {
         this.#state.elListItem[index].classList.remove(activeClass);
