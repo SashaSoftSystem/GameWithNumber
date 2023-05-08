@@ -85,6 +85,8 @@ let keyDataHard = `${userName}Сложный + data`; // Ключ для хра�
 
 /* ******************************************************************************************************************* */
 
+const win = document.querySelector(".window"); // Оверлай
+
 
 /* ****************************************** Вспомогательные методы ************************************************* */
 // Считывание имени и установка ключей
@@ -132,6 +134,7 @@ for (let anchor of anchors) {
 
 // Загрузка при старте страницы
 window.addEventListener("load", function () {
+  win.innerHTML = `Размер экрана: ${this.window.screen.width}`;
   if (userLoad() === true) {
     loadUserAndKey(playerList[this.localStorage.getItem("playerListPossition")]);
     form.classList.add("hide");
