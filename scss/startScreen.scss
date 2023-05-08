@@ -11,6 +11,14 @@
     transition: margin 0.5s ease-out;
     padding: 0px 15px;
 
+    &__title {
+        font-size: $fzh1;
+        @include media("max", "sm") {
+            font-size: calc(0.8 * $fzh1);
+            margin: 0px 0px 20px 0px;
+        }
+    }
+
 
     /* Кнопка начать */
     &__start {
@@ -39,6 +47,7 @@
         @include media("max", "sm") {
             font-size: 10px;
             margin: 0px 0px 10px 0px;
+            line-height: 10px;
         }
     }
 

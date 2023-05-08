@@ -58,6 +58,11 @@ h1 {
     @media (max-width:767px) {
         font-size: calc(0.7 * $fzh1);
     }
+
+    @include media ("max", "sm") {
+        font-size: calc(0.5 * $fzh1);
+        margin-top: 20px;
+    }
 }
 
 

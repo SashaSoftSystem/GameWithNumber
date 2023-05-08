@@ -104,7 +104,7 @@ function loadUserAndKey(user) {
   document.querySelectorAll('.modal__player').forEach(function (element) {
     if (element.innerHTML === userName) {
       element.classList.add("active-player");
-    }    
+    }
   });
   getStatisticByLevel(); // Подгружаем статистику
   createStatistic();
@@ -136,8 +136,8 @@ window.addEventListener("load", function () {
     loadUserAndKey(playerList[this.localStorage.getItem("playerListPossition")]);
     form.classList.add("hide");
     btnStart.classList.remove("hide");
-    btnAvatar.parentElement.classList.remove("hide"); 
-     }  
+    btnAvatar.parentElement.classList.remove("hide");
+  }
 
   if (window.history.length > 1) {
     btnBack.addEventListener('click', () => {
@@ -242,10 +242,10 @@ form.addEventListener("change", function (event) {
   if (!form.value.replace(/\s/g, "").length) {
   } else {
     userName = form.value;
-    btnAvatar.innerHTML = `Игрок: ${userName}`;   
+    btnAvatar.innerHTML = `Игрок: ${userName}`;
     playerList.push(userName);
-    playerListPossition = playerList.length-1;
-    getPlayerListPossition (playerListPossition);
+    playerListPossition = playerList.length - 1;
+    getPlayerListPossition(playerListPossition);
     playerConstructor(userName);
     localStorage.setItem("user", JSON.stringify(playerList)); // Сохраняем массив с результатом в память
     loadUserAndKey(userName);
@@ -282,8 +282,8 @@ function userLoad() {
     playerList = JSON.parse(localStorage.getItem("user")); // Загружаем массив с датой из памяти
     for (let i = 0; i < playerList.length; i++) {
       playerConstructor(playerList[i], i);
-   }
-   return true;
+    }
+    return true;
   }
   return false;
 }
@@ -312,9 +312,9 @@ modal.addEventListener("click", (event) => {
 });
 
 // Позиция выбранного игрока
-function getPlayerListPossition (i) {
+function getPlayerListPossition(i) {
   playerListPossition = i;
-    localStorage.setItem("playerListPossition", playerListPossition)
+  localStorage.setItem("playerListPossition", playerListPossition)
 }
 
 /* ****************************************** Начало игры ***************************************************** */
@@ -327,7 +327,7 @@ btnStart.addEventListener("click", (event) => {
   levelChooseText.innerHTML = `${userName}, выбери уровень и время`;
   btnLvelInfo.innerHTML = `Уровень: «${levelSelected}»`;
   location.href = "#sreenTime";
-  
+
 });
 
 let w;
@@ -338,7 +338,7 @@ for (let i = 0; i < levelList.length; i++) {
   // w = levelList[i].getBoundingClientRect().width;
   // console.log(`Ширина элемента ${w}`);
   console.log(levelList[i].style.overflow);
-  if(levelList[i].style.overflow === "visible") {
+  if (levelList[i].style.overflow === "visible") {
     alert("Видно");
   }
 
@@ -1149,10 +1149,10 @@ class ItcSlider {
       if (item) {
         this.#state.elListItem[index].classList.add(activeClass);
         levelSelected = levelList[index].getAttribute("data-level");
-       levelActive.classList.remove("active-card");
-                btnLvelInfo.innerHTML = `Уровень: «${levelSelected}»`;
-    
-        
+        levelActive.classList.remove("active-card");
+        btnLvelInfo.innerHTML = `Уровень: «${levelSelected}»`;
+
+
       } else {
         this.#state.elListItem[index].classList.remove(activeClass);
       }

@@ -145,6 +145,12 @@ h1 {
     font-size: 2.1rem;
   }
 }
+@media only screen and (max-width: 576px) {
+  h1 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+  }
+}
 
 h2 {
   line-height: 1.4;
@@ -258,7 +264,7 @@ h3 {
 }
 
 .header {
-  max-width: 90%;
+  min-width: 90vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -266,8 +272,19 @@ h3 {
       -ms-flex-pack: right;
           justify-content: right;
   gap: 10px;
-  padding: 15px 10px 0px 0px;
+  padding: 15px 10px 0px 10px;
   margin: 0px auto;
+}
+@media only screen and (max-width: 576px) {
+  .header {
+    margin: 0px auto 20px auto;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  #levelInfo {
+    display: none;
+  }
 }
 
 .avatar {
@@ -328,24 +345,15 @@ h3 {
           flex-direction: column;
   gap: 10px;
 }
-@media (max-width: 1200px) {
-  .modal {
-    max-width: 970px;
-  }
-}
-@media (max-width: 992px) {
-  .modal {
-    max-width: 750px;
-  }
-}
 @media only screen and (max-width: 576px) {
   .modal {
     position: relative;
-    width: 90vw;
-    height: 90vh;
+    min-width: 85vw;
+    min-height: 80vh;
     top: 0px;
     right: 0px;
     margin: 50px auto;
+    z-index: 30;
   }
 }
 .modal__title {
@@ -416,7 +424,7 @@ h3 {
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.4);
-  z-index: 10;
+  z-index: 20;
 }
 
 .screen {
@@ -442,6 +450,15 @@ h3 {
   /* Кнопка начать */
   /* Список времени */
   /* Кнопки со временем */
+}
+.screen__title {
+  font-size: 3rem;
+}
+@media only screen and (max-width: 576px) {
+  .screen__title {
+    font-size: 2.4rem;
+    margin: 0px 0px 20px 0px;
+  }
 }
 .screen__start {
   font-size: 1.3rem;
@@ -469,6 +486,7 @@ h3 {
   .screen__check-level {
     font-size: 10px;
     margin: 0px 0px 10px 0px;
+    line-height: 10px;
   }
 }
 .screen__time-list {

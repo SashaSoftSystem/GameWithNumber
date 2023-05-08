@@ -8,16 +8,27 @@
 }
 
 .header {
-    max-width: 90%;
+    min-width: 90vw;
     display: flex;
     justify-content: right;
     gap: 10px;
-    padding: 15px 10px 0px 0px;
+    padding: 15px 10px 0px 10px;
     margin: 0px auto;
+
+    @include media ("max", "sm") {
+                margin:0px auto 20px auto;
+       
+    }
 }
 
 .restart {
    
+}
+
+#levelInfo{
+    @include media ("max", "sm") {
+        display: none;
+    }
 }
 
 .avatar {
@@ -28,6 +39,8 @@
     line-height: 20px;
     position: relative;
     padding-top: 7px;
+
+
 }
 
 .user__avatar {
