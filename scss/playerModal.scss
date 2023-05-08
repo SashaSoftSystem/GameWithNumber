@@ -1,5 +1,6 @@
 @import "variables.scss";
 @import "media.scss";
+
 /* Окно с выбором игроков */
 .modal {
     max-width: 190px;
@@ -16,11 +17,9 @@
 
 
     @include media("max", "sm"){
-        position: relative;
+        position: static;
         min-width: 85vw;
-        min-height:80vh;
-        top: 0px;
-        right: 0px;
+        min-height:80vh;     
         margin: 50px auto; 
         z-index: 30;
     }
@@ -41,23 +40,18 @@
         align-items: center;
         flex:1 1 auto;
 
-        @media (max-width:1200px) {
-            
-        }
-    
-        @media (max-width:992px) {
-          
-        }
-    
-        @media (max-width:767px) {
-                
-        }
+        @include media("max", "lg"){
+            justify-content: center;
+            align-items: center;            
+            }
 
-        @media (max-width:575px) {
-            flex-direction: column;      
-            justify-content: start; 
-            font-size: 1.1rem;
-           }
+            @include media("max", "sm"){
+                flex-direction: column;      
+                justify-content: start; 
+              
+        
+                       
+                }
     }
 
     &__player {
@@ -119,5 +113,5 @@
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.4);
-    z-index: 20;
+    z-index: 10;
 }

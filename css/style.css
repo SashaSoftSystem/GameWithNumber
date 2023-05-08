@@ -261,6 +261,16 @@ h3 {
   width: 100%;
   font-size: 1rem;
   z-index: 20;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px;
 }
 
 .header {
@@ -272,13 +282,6 @@ h3 {
       -ms-flex-pack: right;
           justify-content: right;
   gap: 10px;
-  padding: 15px 10px 0px 10px;
-  margin: 0px auto;
-}
-@media only screen and (max-width: 576px) {
-  .header {
-    margin: 0px auto 20px auto;
-  }
 }
 
 @media only screen and (max-width: 576px) {
@@ -287,7 +290,7 @@ h3 {
   }
 }
 
-.avatar {
+.player {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -347,11 +350,9 @@ h3 {
 }
 @media only screen and (max-width: 576px) {
   .modal {
-    position: relative;
+    position: static;
     min-width: 85vw;
     min-height: 80vh;
-    top: 0px;
-    right: 0px;
     margin: 50px auto;
     z-index: 30;
   }
@@ -379,7 +380,17 @@ h3 {
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
 }
-@media (max-width: 575px) {
+@media only screen and (max-width: 992px) {
+  .modal__list {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+@media only screen and (max-width: 576px) {
   .modal__list {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -388,7 +399,6 @@ h3 {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: start;
-    font-size: 1.1rem;
   }
 }
 .modal__player {
@@ -424,7 +434,7 @@ h3 {
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.4);
-  z-index: 20;
+  z-index: 10;
 }
 
 .screen {

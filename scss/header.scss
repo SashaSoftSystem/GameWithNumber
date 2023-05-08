@@ -1,3 +1,4 @@
+// Контейнер с шапкой
 .header__container {
     position: fixed;
     top: 0;
@@ -5,33 +6,30 @@
     width: 100%;
     font-size: 1rem;
     z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
 }
 
 .header {
     min-width: 90vw;
     display: flex;
     justify-content: right;
-    gap: 10px;
-    padding: 15px 10px 0px 10px;
-    margin: 0px auto;
-
-    @include media ("max", "sm") {
-                margin:0px auto 20px auto;
-       
-    }
+    gap: 10px;   
 }
 
-.restart {
-   
+.restart {   
 }
 
+// Кнопка "Информация об уровне"
 #levelInfo{
     @include media ("max", "sm") {
         display: none;
     }
 }
-
-.avatar {
+// Кнопка "Список игроков"
+.player {
     display: flex;
     justify-content: center;
     align-content: center;
@@ -40,9 +38,9 @@
     position: relative;
     padding-top: 7px;
 
-
 }
 
+// Кнопка "+"
 .user__avatar {
     position: absolute;
     bottom: -10px;
@@ -55,17 +53,10 @@
     // background-color: white; 
     margin: 3px 0px 0px 0px;
 
-
-
-
     img {
         width: 100%;
         height: 100%;
         border-radius: 50%;
-
-
-
-
     }
 
     &:hover {

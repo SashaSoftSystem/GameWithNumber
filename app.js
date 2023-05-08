@@ -171,7 +171,7 @@ btnClear.addEventListener("click", () => {
 
 // Кнопка «Игрок»
 document.addEventListener("click", (event) => {
-  if (event.target.parentNode.classList.contains("avatar") || event.target.parentNode.classList.contains("user__avatar")) {
+  if (event.target.parentNode.classList.contains("player") || event.target.parentNode.classList.contains("user__avatar")) {
     event.preventDefault();
     modal.classList.remove("hide");
     btnAvatar.parentElement.classList.add("active-player");
