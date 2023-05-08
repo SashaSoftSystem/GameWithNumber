@@ -226,6 +226,13 @@ h3 {
   will-change: transform;
   min-width: 100px;
 }
+@media only screen and (max-width: 576px) {
+  .btn {
+    text-align: center;
+    line-height: 20px;
+    font-size: 1rem;
+  }
+}
 .btn a {
   padding: 4px 0px 0px 0px;
 }
@@ -339,7 +346,6 @@ h3 {
     top: 0px;
     right: 0px;
     margin: 50px auto;
-    background-color: red;
   }
 }
 .modal__title {
@@ -437,15 +443,6 @@ h3 {
   /* Список времени */
   /* Кнопки со временем */
 }
-.screen__check-level {
-  margin: 80px 0px 10px 0px;
-  text-align: center;
-}
-@media only screen and (max-width: 576px) {
-  .screen__check-level {
-    font-size: 10px;
-  }
-}
 .screen__start {
   font-size: 1.3rem;
 }
@@ -461,7 +458,17 @@ h3 {
 }
 @media (max-width: 767px) {
   .screen__start {
-    font-size: 0.91rem;
+    font-size: 1.04rem;
+  }
+}
+.screen__check-level {
+  margin: 80px 0px 10px 0px;
+  text-align: center;
+}
+@media only screen and (max-width: 576px) {
+  .screen__check-level {
+    font-size: 10px;
+    margin: 0px 0px 10px 0px;
   }
 }
 .screen__time-list {
@@ -478,6 +485,12 @@ h3 {
 }
 .screen__time-list li {
   margin: 10px;
+}
+@media only screen and (max-width: 576px) {
+  .screen__time-list {
+    font-size: 10px;
+    margin: 20px 0px 10px 0px;
+  }
 }
 .screen__time-btn {
   max-width: 120px;
@@ -536,19 +549,6 @@ h3 {
   margin: 0px 0px 40px 0px;
   overflow: auto;
   padding: 30px;
-}
-.level::-webkit-scrollbar {
-  width: 0.5px;
-}
-.level::-webkit-scrollbar-track {
-  -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
-  background-color: #f9f9fd;
-  border-radius: 10px;
-}
-.level::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#00c6fb), to(#005bea));
-  background: linear-gradient(180deg, #00c6fb, #005bea);
 }
 @media only screen and (max-width: 768px) {
   .level {
@@ -647,13 +647,6 @@ h3 {
   }
 }
 
-@media only screen and (max-width: 576px) {
-  #check-level {
-    margin: 0px 0px 10px 0px;
-    padding: 0px;
-  }
-}
-
 .img__container {
   width: 70%;
   display: -webkit-box;
@@ -675,7 +668,7 @@ h3 {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
     width: 90%;
-    gap: 10px;
+    gap: 20px;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -690,7 +683,7 @@ h3 {
 }
 @media only screen and (max-width: 768px) {
   .img__container img {
-    width: 30px;
+    width: 40px;
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
   }
