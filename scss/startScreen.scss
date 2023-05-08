@@ -110,6 +110,7 @@
     }
 
     @include media("max", "sm") {
+        display: none;
         min-width: 100vw;
         max-height: 200px;
         padding: 30px;     

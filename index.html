@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="slider/itc-slider.css">
   <title>Игра с числами</title>
 </head>
 <body>
@@ -57,6 +58,94 @@
   <div class="screen__check-level">
     <h1 id="check-level">Выберите уровень и время</h1>
   </div>
+
+
+
+
+  <div class="itc-slider " data-slider="itc-slider">
+    <div class="itc-slider-wrapper">
+      <div class="itc-slider-items">
+        <div class="itc-slider-item">
+          <!-- Контент 1 слайда -->
+        
+    <div class="level__card card easy " data-level="Лёгкий" id="easy">
+      <div class="card__title">
+        <h3>Лёгкий</h3>
+        <div>от 0 до 20</div>
+      </div>
+      <div class="card__main">
+    
+            <div class="img__container">
+              <img src="img/Плюс.png" alt="">
+              <img src="img/Минус.png" alt="">
+            </div>
+      
+      </div>
+      <div class="card__btn btn" id="select"><a href="#">Выбрать</a></div>
+    </div>
+        </div>
+        <div class="itc-slider-item">
+          <!-- Контент 2 слайда -->
+       
+    <div class="level__card medium card active-card" data-level="Средний" id="medium">
+      <div class="card__title">
+        <h3>Средний</h3>
+        <div>от 0 до 20</div>
+      </div>
+      <div class="card__main">
+    
+            <div class="img__container">
+            <img src="img/Умножить.png" alt="">
+            <img src="img/Разделить.png" alt="">
+          </div>
+      
+      </div>
+      <div class=" btn card__btn" id="select"><a href="#">Выбрать</a></div>
+    </div>
+
+        </div>
+        <div class="itc-slider-item">
+          <!-- Контент 3 слайда -->
+          <div class="level__card hard card" data-level="Сложный" id="hard">
+            <div class="card__title">
+              <h3>Сложный</h3>
+              <div>от 0 до 100</div>
+            </div>
+            <div class="card__main">       
+                  <div class="img__container">
+                  <img src="img/Плюс.png" alt="">
+                  <img src="img/Минус.png" alt="">
+                  <img src="img/Умножить.png" alt="">
+                  <img src="img/Разделить.png" alt="">
+                </div>
+            
+            </div>
+            <div class="card__btn btn" id="select"><a href="#">Выбрать</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    
+    <!-- Кнопки для перехода к предыдущему и следующему слайду -->
+    <button class="itc-slider-btn itc-slider-btn-prev"></button>
+    <button class="itc-slider-btn itc-slider-btn-next"></button>
+
+    <ol class="itc-slider-indicators">
+      <!-- data-slide-to="0" – для перехода к 1 слайду -->
+      <li class="itc-slider-indicator" data-slide-to="0"></li>
+      <!-- data-slide-to="1" – для перехода к 2 слайду -->
+      <li class="itc-slider-indicator" data-slide-to="1"></li>
+      <!-- data-slide-to="2" – для перехода к 3 слайду -->
+      <li class="itc-slider-indicator" data-slide-to="2"></li>
+    </ol>
+  </div>
+
+
+
+
+
 
   <div class="screen__level level" id="level">
 
@@ -216,7 +305,9 @@
   </div>  
 
   <!-- Подключение скрипта -->
+
   <script src="app.js"></script>
+  
 </body>
 
 </html>

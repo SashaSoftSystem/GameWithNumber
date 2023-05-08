@@ -558,6 +558,7 @@ h3 {
 }
 @media only screen and (max-width: 576px) {
   .level {
+    display: none;
     min-width: 100vw;
     max-height: 200px;
     padding: 30px;
