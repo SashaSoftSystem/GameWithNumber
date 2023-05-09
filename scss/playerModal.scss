@@ -17,11 +17,12 @@
 
 
     @include media("max", "sm"){
-        position: static;
+        position: relative;
         min-width: 85vw;
-        min-height:80vh;     
-        margin: 50px auto; 
-        z-index: 30;
+        min-height:80vh;  
+        top: 0;
+    right: 0;   
+        margin: 30px auto; 
     }
 
 
