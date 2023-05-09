@@ -85,7 +85,7 @@ let keyDataHard = `${userName}Сложный + data`; // Ключ для хра�
 
 /* ******************************************************************************************************************* */
 
-const win = document.querySelector(".window"); // Оверлай
+const win = document.querySelector(".window"); // Размер экрана
 
 
 /* ****************************************** Вспомогательные методы ************************************************* */
@@ -333,17 +333,17 @@ btnStart.addEventListener("click", (event) => {
 
 });
 
-let w;
-let x;
+// Выбор уровня, если не мобилка
 
-// Метод выбор уровня
+// Этот медиа-запрос нацелен на области просмотра, которые имеют минимальную ширину 320 пикселей
+const mQuery = window.matchMedia('(max-width: 576px)');
+
+function handleMobilePhoneResize(e) {   
+   // Проверяем, верен ли медиа-запрос
+   if (!(e.matches)) {     
+        // Затем выводим в консоль следующее сообщение
+        // Метод выбор уровня
 for (let i = 0; i < levelList.length; i++) {
-  // w = levelList[i].getBoundingClientRect().width;
-  // console.log(`Ширина элемента ${w}`);
-  console.log(levelList[i].style.overflow);
-  if (levelList[i].style.overflow === "visible") {
-    alert("Видно");
-  }
 
   levelList[i].addEventListener("click", function () {
     btnActiveLevel.innerHTML = "Выбрать";
@@ -355,9 +355,12 @@ for (let i = 0; i < levelList.length; i++) {
     levelSelected = levelList[i].getAttribute("data-level");
     btnLvelInfo.innerHTML = `Уровень: «${levelSelected}»`;
   });
-};
+}; ;
+   } ;
+} 
 
-
+// Настраиваем слушателя событий
+mQuery.addListener(handleMobilePhoneResize);
 
 // Метод выбора времени. В методе ниже применяется делигирование событий
 timeList.addEventListener("click", (event) => {

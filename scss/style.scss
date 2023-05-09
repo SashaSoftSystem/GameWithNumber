@@ -24,6 +24,10 @@ body {
     margin: 0 auto;
     padding: 15px;
     overflow: hidden;
+
+    @include media ("max", "sm") {
+    
+    }
 }
 
 h1 {

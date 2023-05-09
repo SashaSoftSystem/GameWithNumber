@@ -14,7 +14,8 @@
 @media only screen and (max-width: 576px) {
   .itc-slider {
     display: block;
-    max-width: 95vw;
+    max-width: 90vw;
+    background-color: red;
     border-radius: 30px;
   }
 }
