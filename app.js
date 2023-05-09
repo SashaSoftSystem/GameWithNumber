@@ -134,7 +134,7 @@ for (let anchor of anchors) {
 
 // Загрузка при старте страницы
 window.addEventListener("load", function () {
-  win.innerHTML = `Размер экрана: ${this.window.screen.width}`;
+  win.innerHTML = `Ширина: ${this.window.screen.width}, Высота: ${this.window.screen.height}`;
   if (userLoad() === true) {
     loadUserAndKey(playerList[this.localStorage.getItem("playerListPossition")]);
     form.classList.add("hide");
