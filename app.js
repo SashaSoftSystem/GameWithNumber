@@ -86,6 +86,9 @@ let keyDataHard = `${userName}Сложный + data`; // Ключ для хра�
 /* ******************************************************************************************************************* */
 
 const win = document.querySelector(".window"); // Размер экрана
+<script src="https://telegram.org/js/telegram-web-app.js"></script>;
+
+document.querySelector("#screen__title").innerHTML=window.Telegram.WebApp.initDataUnsafe.user.username
 
 
 /* ****************************************** Вспомогательные методы ************************************************* */
